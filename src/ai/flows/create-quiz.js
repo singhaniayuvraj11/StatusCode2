@@ -8,13 +8,22 @@
  * - CreateQuizOutput - The return type for the createQuiz function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'genkit';
 
+// --- NEW: Added a dedicated schema for document input, mirroring the reference ---
+const DocumentInputSchema = z.object({
+  dataUri: z.string().describe("The document content as a data URI, including a MIME type and Base64 encoding. Format: 'data:<mimetype>;base64,<encoded_data>'."),
+});
+
+// --- MODIFIED: The main input schema now uses the nested DocumentInputSchema ---
 const CreateQuizInputSchema = z.object({
   studyMaterials: z
     .string()
-    .describe("The study materials to generate a quiz from."),
+    .optional()
+    .describe("The study materials as text to generate a quiz from."),
+  document: DocumentInputSchema.optional()
+    .describe("The document to generate the quiz from. This is the primary source if provided."),
   questionTypes: z
     .string()
     .describe("The types of questions to include in the quiz (e.g., multiple choice, true/false)."),
@@ -25,7 +34,6 @@ const CreateQuizInputSchema = z.object({
     .number()
     .describe("The number of questions to generate for the quiz."),
 });
-
 
 const QuizQuestionSchema = z.object({
     question: z.string().describe('The question text.'),
@@ -45,13 +53,21 @@ export async function createQuiz(input) {
 
 const prompt = ai.definePrompt({
   name: 'createQuizPrompt',
-  input: {schema: CreateQuizInputSchema},
-  output: {schema: CreateQuizOutputSchema},
+  input: { schema: CreateQuizInputSchema },
+  output: { schema: CreateQuizOutputSchema },
+  // --- MODIFIED: The prompt now uses the robust {{media}} helper for documents ---
   prompt: `You are an expert quiz creator for students.
 
-You will use the study materials to generate a quiz with the specified question types, difficulty level, and number of questions.
+You will be given study materials either as text or as an uploaded document. You must use the content from these materials to generate a quiz with the specified question types, difficulty level, and number of questions.
 
-Study Materials: {{{studyMaterials}}}
+{{#if document}}
+Document: {{media url=document.dataUri}}
+{{/if}}
+
+{{#if studyMaterials}}
+Content: {{{studyMaterials}}}
+{{/if}}
+
 Question Types: {{{questionTypes}}}
 Difficulty Level: {{{difficultyLevel}}}
 Number of Questions: {{{numberOfQuestions}}}
@@ -66,8 +82,13 @@ const createQuizFlow = ai.defineFlow(
     inputSchema: CreateQuizInputSchema,
     outputSchema: CreateQuizOutputSchema,
   },
-  async input => {
-    const {output} = await prompt(input);
+  async (input) => {
+    // This validation logic is correct and remains the same.
+    if (!input.studyMaterials && !input.document) {
+      throw new Error('Either text or a document must be provided.');
+    }
+    
+    const { output } = await prompt(input);
     return output;
   }
 );
