@@ -17,7 +17,7 @@ ScholarAI is an all-in-one platform for academic and career success, powered by 
 
 ## Features
 - **Resume Builder**: Craft professional resumes with intuitive templates and live preview.
-- **AI Note Generator**: Generate structured, concise notes from text or audio using AI.
+- **AI Note Generator**: Generate structured, concise notes from text 
 - **Document Summarizer**: Quickly summarize long documents and articles.
 - **AI Quiz Creator**: Create customized quizzes from study materials to test knowledge.
 
