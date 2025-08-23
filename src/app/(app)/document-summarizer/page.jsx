@@ -11,12 +11,19 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function DocumentSummarizerPage() {
   const [documentText, setDocumentText] = useState('');
   const [documentFile, setDocumentFile] = useState(null);
   const [summary, setSummary] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  // new states for customization
+  const [detailLevel, setDetailLevel] = useState('medium');
+  const [customLength, setCustomLength] = useState('');
+  const [tone, setTone] = useState('academic');
+
   const { toast } = useToast();
 
   const handleFileChange = (e) => {
@@ -42,6 +49,8 @@ export default function DocumentSummarizerPage() {
 
     try {
       let result;
+      const options = { detailLevel, customLength, tone };
+
       if (type === 'text') {
         if (!documentText.trim()) {
           toast({
@@ -52,7 +61,7 @@ export default function DocumentSummarizerPage() {
           setIsLoading(false);
           return;
         }
-        result = await summarizeDocument({ documentText });
+        result = await summarizeDocument({ documentText, ...options });
       } else {
         if (!documentFile) {
           toast({ title: 'Error', description: 'Please upload a document file.', variant: 'destructive' });
@@ -60,10 +69,8 @@ export default function DocumentSummarizerPage() {
           return;
         }
         const dataUri = await fileToDataUri(documentFile);
-        const document = {
-            dataUri: dataUri
-        }
-        result = await summarizeDocument({ document });
+        const document = { dataUri };
+        result = await summarizeDocument({ document, ...options });
       }
       setSummary(result);
     } catch (error) {
@@ -82,7 +89,7 @@ export default function DocumentSummarizerPage() {
     <div className="p-4 md:p-8 h-full">
       <header className="mb-8">
         <h1 className="text-3xl font-bold font-headline">Document Summarizer</h1>
-        <p className="text-muted-foreground">Paste text or upload a document to get a concise AI-generated summary.</p>
+        <p className="text-muted-foreground">Paste text or upload a document to get a customized AI-generated summary.</p>
       </header>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <div>
@@ -91,6 +98,8 @@ export default function DocumentSummarizerPage() {
               <TabsTrigger value="text"><FileText className="mr-2 h-4 w-4" /> Text Input</TabsTrigger>
               <TabsTrigger value="document"><FileUp className="mr-2 h-4 w-4" /> Document Upload</TabsTrigger>
             </TabsList>
+
+            {/* TEXT TAB */}
             <TabsContent value="text">
               <Card>
                 <CardHeader>
@@ -101,11 +110,47 @@ export default function DocumentSummarizerPage() {
                   <form onSubmit={(e) => handleSubmit(e, 'text')} className="space-y-4">
                     <Textarea
                       placeholder="Paste your document text here..."
-                      className="min-h-[300px] text-base"
+                      className="min-h-[200px] text-base"
                       value={documentText}
                       onChange={(e) => setDocumentText(e.target.value)}
                       disabled={isLoading}
                     />
+
+                    {/* Customization controls */}
+                    <div className="space-y-2">
+                      <Label>Detail Level</Label>
+                      <Select value={detailLevel} onValueChange={setDetailLevel}>
+                        <SelectTrigger><SelectValue placeholder="Select detail level" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="short">Short</SelectItem>
+                          <SelectItem value="medium">Medium</SelectItem>
+                          <SelectItem value="detailed">Detailed</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Custom Length (optional)</Label>
+                      <Input
+                        placeholder="e.g. 100 words, 5 bullet points"
+                        value={customLength}
+                        onChange={(e) => setCustomLength(e.target.value)}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Tone / Style</Label>
+                      <Select value={tone} onValueChange={setTone}>
+                        <SelectTrigger><SelectValue placeholder="Select tone" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="academic">Academic</SelectItem>
+                          <SelectItem value="simplified">Simplified</SelectItem>
+                          <SelectItem value="business">Business</SelectItem>
+                          <SelectItem value="bullet">Bullet Notes</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
                     <Button type="submit" disabled={isLoading || !documentText.trim()} className="w-full">
                       {isLoading ? (
                         <>
@@ -123,6 +168,8 @@ export default function DocumentSummarizerPage() {
                 </CardContent>
               </Card>
             </TabsContent>
+
+            {/* DOCUMENT TAB */}
             <TabsContent value="document">
               <Card>
                 <CardHeader>
@@ -131,11 +178,47 @@ export default function DocumentSummarizerPage() {
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={(e) => handleSubmit(e, 'document')} className="space-y-4">
-                    <div className="space-y-2 pt-16 pb-16">
-                      <Label htmlFor="doc-file" className="block text-center text-lg">Upload Document File</Label>
-                      <Input id="doc-file" type="file" onChange={handleFileChange} disabled={isLoading} className="w-fit mx-auto" />
-                      {documentFile && <p className="text-sm text-muted-foreground text-center pt-2">Selected: {documentFile.name}</p>}
+                    <div className="space-y-2 pt-6">
+                      <Label htmlFor="doc-file" className="block">Upload Document File</Label>
+                      <Input id="doc-file" type="file" onChange={handleFileChange} disabled={isLoading} />
+                      {documentFile && <p className="text-sm text-muted-foreground pt-2">Selected: {documentFile.name}</p>}
                     </div>
+
+                    {/* same customization for document */}
+                    <div className="space-y-2">
+                      <Label>Detail Level</Label>
+                      <Select value={detailLevel} onValueChange={setDetailLevel}>
+                        <SelectTrigger><SelectValue placeholder="Select detail level" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="short">Short</SelectItem>
+                          <SelectItem value="medium">Medium</SelectItem>
+                          <SelectItem value="detailed">Detailed</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Custom Length (optional)</Label>
+                      <Input
+                        placeholder="e.g. 200 words, 10 bullet points"
+                        value={customLength}
+                        onChange={(e) => setCustomLength(e.target.value)}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label>Tone / Style</Label>
+                      <Select value={tone} onValueChange={setTone}>
+                        <SelectTrigger><SelectValue placeholder="Select tone" /></SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="academic">Academic</SelectItem>
+                          <SelectItem value="simplified">Simplified</SelectItem>
+                          <SelectItem value="business">Business</SelectItem>
+                          <SelectItem value="bullet">Bullet Notes</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
                     <Button type="submit" disabled={isLoading || !documentFile} className="w-full">
                       {isLoading ? (
                         <>
@@ -155,7 +238,8 @@ export default function DocumentSummarizerPage() {
             </TabsContent>
           </Tabs>
         </div>
-        
+
+        {/* SUMMARY PANEL */}
         <Card className="min-h-[500px]">
           <CardHeader>
             <CardTitle>AI Summary</CardTitle>
