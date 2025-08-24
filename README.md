@@ -7,8 +7,8 @@ Status Code 2 | Organized by IIIT Kalyani
 - Aryan Bhargava
 - Jatin Kabra
 - Yuvraj Singhania
-- Arundhati behera
 - Asmit Saha
+- Arundhati behera
 
 ---
 
