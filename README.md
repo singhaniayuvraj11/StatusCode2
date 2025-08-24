@@ -101,41 +101,41 @@ A **mobile app** replicates the core functionality of the web version, giving us
 ## 📂 Project Structure  
 
 src/
-├── ai/
-│ ├── dev.js, genkit.js # AI logic and integrations
-│ └── flows/
-│ ├── create-quiz.js # Quiz generation
-│ ├── generate-notes.js # Note generation
-│ └── summarize-document.js # Summarization
-│
-├── app/
-│ ├── favicon.ico, globals.css, layout.jsx, page.jsx
-│ ├── (app)/
-│ │ ├── layout.jsx
-│ │ ├── document-summarizer/page.jsx
-│ │ ├── note-generator/page.jsx
-│ │ ├── quiz-creator/page.jsx
-│ │ └── resume-builder/page.jsx
-│ └── (auth)/
-│ ├── layout.jsx
-│ ├── login/page.jsx
-│ └── signup/page.jsx
-│
-├── components/
-│ ├── app-sidebar.jsx
-│ └── ui/ (accordion, button, card, form, input, etc.)
-│
-├── hooks/
-│ ├── use-auth.js
-│ ├── use-mobile.jsx
-│ └── use-toast.js
-│
-├── lib/
-│ ├── firebase.js
-│ └── utils.js
-│
-docs/
-└── blueprint.md
+* ├── ai/
+* │ ├── dev.js, genkit.js # AI logic and integrations
+* │ └── flows/
+* │ ├── create-quiz.js # Quiz generation
+* │ ├── generate-notes.js # Note generation
+* │ └── summarize-document.js # Summarization
+* │
+* ├── app/
+* │ ├── favicon.ico, globals.css, layout.jsx, page.jsx
+* │ ├── (app)/
+* │ │ ├── layout.jsx
+* │ │ ├── document-summarizer/page.jsx
+* │ │ ├── note-generator/page.jsx
+* │ │ ├── quiz-creator/page.jsx
+* │ │ └── resume-builder/page.jsx
+* │ └── (auth)/
+* │ ├── layout.jsx
+* │ ├── login/page.jsx
+* │ └── signup/page.jsx
+* │
+* ├── components/
+* │ ├── app-sidebar.jsx
+* │ └── ui/ (accordion, button, card, form, input, etc.)
+* │
+* ├── hooks/
+* │ ├── use-auth.js
+* │ ├── use-mobile.jsx
+* │ └── use-toast.js
+* │
+* ├── lib/
+* │ ├── firebase.js
+* │ └── utils.js
+* │
+* docs/
+* └── blueprint.md
 
 yaml
 Copy
