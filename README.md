@@ -15,11 +15,25 @@ Status Code 2 | Organized by IIIT Kalyani
 ## Overview
 ScholarAI is an all-in-one platform for academic and career success, powered by cutting-edge AI. Built with Next.js and Firebase, it offers tools for resume building, note generation, document summarization, and quiz creation—all in one place. The site uses Firebase for user authentication and is deployed on Vercel for seamless hosting.
 
+
 ## Features
 - **Resume Builder**: Craft professional resumes with intuitive templates and live preview.
 - **AI Note Generator**: Generate structured, concise notes from text 
 - **Document Summarizer**: Quickly summarize long documents and articles.
 - **AI Quiz Creator**: Create customized quizzes from study materials to test knowledge.
+
+---
+
+## Mobile App
+We also built a mobile app with similar functionality, so users can choose between the web or app version depending on their usability and preference.
+
+**Tech Stack:**
+- Kotlin
+- Jetpack Compose
+- Gemini API
+- Koin (for dependency injection)
+
+Both the web and mobile app provide the same core features for academic and career success.
 
 ## Technologies Used
 - **Frontend**: Next.js, React, Tailwind CSS
