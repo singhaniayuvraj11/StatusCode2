@@ -19,6 +19,8 @@ ScholarAI is an all-in-one platform for academic and career success, powered by 
 
 ## Features
 - **Resume Builder**: Build your resume with the help of an AI chatbot. Get real-time feedback and suggestions from AI, and have your resume reviewed for improvements. (Note: Multiple templates are not available; the focus is on AI-driven guidance and review.)
+
+  
 - **AI Note Generator**: Generate structured, concise notes from your study materials using AI. The tool can summarize, organize, and highlight key points from any text or uploaded document, and you can interact with the AI for clarifications or deeper explanations.
 - **Document Summarizer**: Summarize long documents and articles with AI. The summarizer extracts the most important information, provides bullet-point overviews, and can answer follow-up questions about the content.
 - **AI Quiz Creator**: Create customized quizzes from your study materials. Choose question types (multiple choice, true/false, etc.), set difficulty, and let AI generate questions. The quiz creator supports both text and PDF input, and provides instant feedback on your answers.
