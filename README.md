@@ -154,54 +154,56 @@ Additional configuration:
 
 ## ⚙️ Setup Instructions  
 
-1. **Clone the repository**  
-   ```sh
-   git clone <repository-url>
-   cd StatusCode2
-Install dependencies
 
-sh
-Copy
-Edit
+## 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd StatusCode2
+```
+
+## 2. Install dependencies
+
+```bash
 npm install
-Configure Firebase
+```
 
-Create a Firebase project
+## 3. Configure Firebase
 
-Enable authentication
+- Create a Firebase project  
+- Enable authentication  
+- Add Firebase credentials to environment variables  
 
-Add Firebase credentials to environment variables
+## 4. Run locally
 
-Run locally
-
-sh
-Copy
-Edit
+```bash
 npx next dev -p 9004
-Open http://localhost:9004
+```
+Open: [http://localhost:9004](http://localhost:9004)
 
-Build for production
+## 5. Build for production
 
-sh
-Copy
-Edit
+```bash
 npm run build
 npm start
-Deploy to Vercel
+```
 
-Connect GitHub repository to Vercel
+## 6. Deploy to Vercel
 
-Deploy via Vercel dashboard or CLI
+- Connect GitHub repository to Vercel  
+- Deploy via Vercel dashboard or CLI  
 
-🏗️ Development Context
+---
+
+### 📖 Development Context
 ScholarAI was developed during Status Code 2, an event organized by IIIT Kalyani, highlighting team collaboration and innovation in AI-driven education tools.
 
-🤝 Contributing
+### 🤝 Contributing
 Contributions are welcome. Fork the repository, open issues, or create pull requests to improve the project.
 
-📜 License
-This project was created for educational purposes as part of Status Code 2.
+### 📜 License
+This project was created for educational purposes as part of Status Code 2.  
 [Insert License Here: e.g., MIT]
 
-🙌 Acknowledgements
+### 🙌 Acknowledgements
 Special thanks to the IIIT Kalyani community and participants of Status Code 2 for guidance and support.
