@@ -156,7 +156,14 @@ export default function ResumePage() {
         throw new Error(`AI review failed: ${response.status} ${errorText}`)
       }
       const data = await response.json()
-      const feedback = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No feedback returned."
+      let feedback = data?.candidates?.[0]?.content?.parts?.[0]?.text || "No feedback returned."
+      // Remove markdown formatting (basic)
+      feedback = feedback.replace(/\*\*(.*?)\*\*/g, '$1') // bold
+      feedback = feedback.replace(/\*(.*?)\*/g, '$1') // italics
+      feedback = feedback.replace(/`([^`]*)`/g, '$1') // inline code
+      feedback = feedback.replace(/^#+\s*/gm, '') // headings (#, ##, ###)
+      feedback = feedback.replace(/^- /gm, '') // bullet points
+      feedback = feedback.replace(/\n{2,}/g, '\n') // collapse extra newlines
       setAIFeedback(feedback)
     } catch (err) {
       setAIFeedback("Error getting feedback: " + (err instanceof Error ? err.message : "Unknown error"))
