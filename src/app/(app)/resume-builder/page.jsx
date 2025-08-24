@@ -7,7 +7,7 @@ export default function ResumeBuilderPage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("https://scholar-edu-resume-builder.vercel.app/");
+    router.push("https://scholar-ai-resume-builder.vercel.app/");
   }, []);
 
   return <div></div>;
