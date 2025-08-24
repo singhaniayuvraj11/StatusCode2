@@ -215,7 +215,7 @@ npm start
 
 ## 6. Deploy to Vercel
 
-- Connect GitHub repository to Vercel  
+- Connect GitHub Repository to Vercel  
 - Deploy via Vercel dashboard or CLI  
 
 ---
