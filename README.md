@@ -44,8 +44,16 @@ The platform supports both **web** and **mobile** interfaces, ensuring accessibi
 - AI-driven review (Note: single-template system, focused on content quality)  
 
 <p align="center">
-  <img src="scholarAI SS/ss1.png" >
-</p> 
+  <img src="scholarAI SS/ss1.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI SS/ss2.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI SS/ss3.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI SS/ss4.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI SS/ss5.jpeg" width="15%">
+</p>  
 
 ### 📚 AI Note Generator  
 - Converts raw study material into concise, structured notes  
