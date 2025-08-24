@@ -227,8 +227,7 @@ ScholarAI was developed during Status Code 2, an event organized by IIIT Kalyani
 Contributions are welcome. Fork the repository, open issues, or create pull requests to improve the project.
 
 ### 📜 License
-This project was created for educational purposes as part of Status Code 2.  
-[Insert License Here: e.g., MIT]
+This project was created for educational purposes as part of Status Code 2. 
 
 ### 🙌 Acknowledgements
 Special thanks to the IIIT Kalyani community and participants of Status Code 2 for guidance and support.
