@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "550461021814",
+    "project_id": "hbb-edumate-ai",
+    "storage_bucket": "hbb-edumate-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550461021814:android:211547a7b8b46375530957",
+        "android_client_info": {
+          "package_name": "com.jk.edumate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550461021814-kuc07ripumj4jb28ifr26jk0pdd413l5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jk.edumate",
+            "certificate_hash": "19080a4918f7d0a0d3631e0689ff23d8f14a4055"
+          }
+        },
+        {
+          "client_id": "550461021814-emmpebk93qj4hp1afuid699uuotof028.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKdV6LqyYzaR6ONp3d0wsEJSWjBpUuw-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550461021814-emmpebk93qj4hp1afuid699uuotof028.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
