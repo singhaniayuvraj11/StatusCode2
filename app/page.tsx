@@ -293,7 +293,6 @@ export default function ResumePage() {
             </div>
             <a
               href="https://scholarai-edu.vercel.app/"
-              target="_blank"
               rel="noopener noreferrer"
               className="ml-2 px-3 py-1 rounded-md bg-accent text-accent-foreground text-xs md:text-sm font-semibold hover:bg-accent/80 transition"
               style={{ display: 'flex', alignItems: 'center', height: '2rem' }}
