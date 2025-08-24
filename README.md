@@ -20,7 +20,7 @@
 - Jatin Kabra  
 - Yuvraj Singhania  
 - Asmit Saha  
-- Arundhati Behera  
+- Arundhati Bera  
 
 ---
 
