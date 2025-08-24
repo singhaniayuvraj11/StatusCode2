@@ -1,34 +1,69 @@
+# ScholarAI  
 
-# ScholarAI
+**Status Code 2 | Organized by IIIT Kalyani**  
 
-Status Code 2 | Organized by IIIT Kalyani
-
-## Team Members
-- Aryan Bhargava
-- Jatin Kabra
-- Yuvraj Singhania
-- Asmit Saha
-- Arundhati behera
-
----
-
-## Overview
-ScholarAI is an all-in-one platform for academic and career success, powered by cutting-edge AI. Built with Next.js and Firebase, it offers tools for resume building, note generation, document summarization, and quiz creation—all in one place. The site uses Firebase for user authentication and is deployed on Vercel for seamless hosting.
-
-
-
-## Features
-- **Resume Builder**: Build your resume with the help of an AI chatbot. Get real-time feedback and suggestions from AI, and have your resume reviewed for improvements. (Note: Multiple templates are not available; the focus is on AI-driven guidance and review.)
-
-  
-- **AI Note Generator**: Generate structured, concise notes from your study materials using AI. The tool can summarize, organize, and highlight key points from any text or uploaded document, and you can interact with the AI for clarifications or deeper explanations.
-- **Document Summarizer**: Summarize long documents and articles with AI. The summarizer extracts the most important information, provides bullet-point overviews, and can answer follow-up questions about the content.
-- **AI Quiz Creator**: Create customized quizzes from your study materials. Choose question types (multiple choice, true/false, etc.), set difficulty, and let AI generate questions. The quiz creator supports both text and PDF input, and provides instant feedback on your answers.
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" />
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=android&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gemini%20API-4285F4?style=for-the-badge&logo=google&logoColor=white" />
+</p>  
 
 ---
 
-## Mobile App
-We also built a mobile app with similar functionality, so users can choose between the web or app version depending on their usability and preference.
+## 👥 Team Members  
+- Aryan Bhargava  
+- Jatin Kabra  
+- Yuvraj Singhania  
+- Asmit Saha  
+- Arundhati Behera  
+
+---
+
+## 📖 Overview  
+**ScholarAI** is an AI-powered academic and career support platform built with **Next.js** and **Firebase**. It integrates multiple tools into a single ecosystem, enabling students and professionals to:  
+
+- Build resumes with AI assistance  
+- Generate structured notes from study material  
+- Summarize lengthy documents  
+- Create customized quizzes for self-assessment  
+
+The platform supports both **web** and **mobile** interfaces, ensuring accessibility and flexibility. Hosting is managed seamlessly on **Vercel**.  
+
+---
+
+## 🚀 Features  
+
+### 📝 Resume Builder  
+- AI chatbot assists in resume creation  
+- Real-time feedback and improvement suggestions  
+- AI-driven review (Note: single-template system, focused on content quality)  
+
+### 📚 AI Note Generator  
+- Converts raw study material into concise, structured notes  
+- Highlights key points and organizes content intelligently  
+- Interactive Q&A for deeper understanding  
+
+### 📄 Document Summarizer  
+- Extracts core information from long documents  
+- Provides concise bullet-point summaries  
+- Supports interactive queries on summarized content  
+
+### 🎯 AI Quiz Creator  
+- Generates customized quizzes from text or PDF inputs  
+- Supports **MCQs** and **True/False** formats  
+- Adjustable difficulty levels  
+- Instant feedback on answers  
+
+---
+
+## 📱 Mobile Application  
+
+A **mobile app** replicates the core functionality of the web version, giving users flexibility in accessing features.  
 
 <p align="center">
   <img src="scholarAI App SS/notes.jpeg" width="15%">
@@ -42,110 +77,131 @@ We also built a mobile app with similar functionality, so users can choose betwe
   <img src="scholarAI App SS/quiz4.jpeg" width="15%">
   &nbsp;
  <img src="scholarAI App SS/resume.jpeg" width="15%">
-</p>
+</p>  
 
-**Tech Stack:**
-- Kotlin
-- Jetpack Compose
-- Gemini API
-- Koin (for dependency injection)
-
-Both the web and mobile app provide the same core features for academic and career success.
-
-## Technologies Used
-- **Frontend**: Next.js, React, Tailwind CSS
-- **Backend**: Firebase (for login authentication)
-- **Deployment**: Vercel
-
-## Project Structure
-
-### Folder & File Breakdown
-
-- **src/**
-	- **ai/**
-		- `dev.js`, `genkit.js`: AI logic and integrations.
-		- **flows/**
-			- `create-quiz.js`: Logic for generating quizzes from study material.
-			- `generate-notes.js`: AI-powered note generation.
-			- `summarize-document.js`: Document summarization logic.
-	- **app/**
-		- `favicon.ico`, `globals.css`, `layout.jsx`, `page.jsx`: Global app assets and layout.
-		- **(app)/**
-			- `layout.jsx`: Layout for main app features.
-			- **document-summarizer/**
-				- `page.jsx`: Document summarizer feature page.
-			- **note-generator/**
-				- `page.jsx`: Note generator feature page.
-			- **quiz-creator/**
-				- `page.jsx`: Quiz creator feature page.
-			- **resume-builder/**
-				- `page.jsx`: Resume builder feature page.
-		- **(auth)/**
-			- `layout.jsx`: Layout for authentication pages.
-			- **login/**
-				- `page.jsx`: Login page.
-			- **signup/**
-				- `page.jsx`: Signup page.
-	- **components/**
-		- `app-sidebar.jsx`: Sidebar navigation for the app.
-		- **ui/**: Reusable UI components (accordion, alert, button, card, dialog, form, input, label, menubar, popover, progress, radio-group, select, sidebar, skeleton, slider, switch, table, tabs, textarea, toast, toaster, tooltip, etc.).
-	- **hooks/**
-		- `use-auth.js`: Custom hook for authentication logic.
-		- `use-mobile.jsx`: Hook for mobile responsiveness.
-		- `use-toast.js`: Hook for toast notifications.
-	- **lib/**
-		- `firebase.js`: Firebase integration and configuration.
-		- `utils.js`: General utility functions.
-
-- **docs/**
-	- `blueprint.md`: Project documentation and planning.
-
-- **Configuration & Meta Files**
-	- `apphosting.yaml`, `components.json`, `jsconfig.json`, `next.config.js`, `package.json`, `postcss.config.mjs`, `tailwind.config.js`, `README.md`
-
-## Authentication
-Google authentication is enabled via Firebase. Click "Login with Google" on the landing page to sign in.
-
-## Setup Instructions
-1. Clone the repository:
-	```sh
-	git clone <repository-url>
-	cd StatusCode2
-	```
-2. Install dependencies:
-	```sh
-	npm install
-	```
-3. Set up Firebase:
-	- Create a Firebase project and enable authentication.
-	- Add your Firebase configuration to the project environment variables.
-4. Running Locally:
-	```sh
-	npx next dev -p 9004
-	```
-	Visit [http://localhost:9004](http://localhost:9004) in your browser.
-5. Build for Production:
-	```sh
-	npm run build
-	npm start
-	```
-6. Deploy to Vercel:
-	- Connect your GitHub repository to Vercel.
-	- Deploy the project using Vercel's dashboard or CLI.
-
-## Development Context
-This project was developed during **Status Code 2**, an event organized by IIIT Kalyani. It showcases the collaborative efforts of the team to build an AI-powered educational tool.
-
-## Contributing
-Feel free to fork this repository, submit issues, or create pull requests to contribute to the project.
-
-## License
-This project is for educational purposes and was developed as part of Status Code 2, organized by IIIT Kalyani.
-[Specify license, e.g., MIT, if applicable]
-
-## Acknowledgements
-Special thanks to the IIIT Kalyani community and participants of Status Code 2 for the inspiration and support.
+**Mobile Tech Stack**  
+- **Kotlin** + **Jetpack Compose**  
+- **Gemini API** for AI integration  
+- **Koin** for dependency injection  
 
 ---
 
-For any queries, contact the team members listed above.
+## 🛠️ Tech Stack  
+
+**Web Application**  
+- Frontend: Next.js, React, Tailwind CSS  
+- Backend: Firebase (authentication & services)  
+- Deployment: Vercel  
+
+**Mobile Application**  
+- Kotlin, Jetpack Compose, Gemini API, Koin  
+
+---
+
+## 📂 Project Structure  
+
+src/
+├── ai/
+│ ├── dev.js, genkit.js # AI logic and integrations
+│ └── flows/
+│ ├── create-quiz.js # Quiz generation
+│ ├── generate-notes.js # Note generation
+│ └── summarize-document.js # Summarization
+│
+├── app/
+│ ├── favicon.ico, globals.css, layout.jsx, page.jsx
+│ ├── (app)/
+│ │ ├── layout.jsx
+│ │ ├── document-summarizer/page.jsx
+│ │ ├── note-generator/page.jsx
+│ │ ├── quiz-creator/page.jsx
+│ │ └── resume-builder/page.jsx
+│ └── (auth)/
+│ ├── layout.jsx
+│ ├── login/page.jsx
+│ └── signup/page.jsx
+│
+├── components/
+│ ├── app-sidebar.jsx
+│ └── ui/ (accordion, button, card, form, input, etc.)
+│
+├── hooks/
+│ ├── use-auth.js
+│ ├── use-mobile.jsx
+│ └── use-toast.js
+│
+├── lib/
+│ ├── firebase.js
+│ └── utils.js
+│
+docs/
+└── blueprint.md
+
+yaml
+Copy
+Edit
+
+Additional configuration:  
+`apphosting.yaml`, `components.json`, `jsconfig.json`, `next.config.js`, `package.json`, `postcss.config.mjs`, `tailwind.config.js`, `README.md`  
+
+---
+
+## 🔐 Authentication  
+- Google authentication enabled through Firebase.  
+- Sign in by selecting **"Login with Google"** on the landing page.  
+
+---
+
+## ⚙️ Setup Instructions  
+
+1. **Clone the repository**  
+   ```sh
+   git clone <repository-url>
+   cd StatusCode2
+Install dependencies
+
+sh
+Copy
+Edit
+npm install
+Configure Firebase
+
+Create a Firebase project
+
+Enable authentication
+
+Add Firebase credentials to environment variables
+
+Run locally
+
+sh
+Copy
+Edit
+npx next dev -p 9004
+Open http://localhost:9004
+
+Build for production
+
+sh
+Copy
+Edit
+npm run build
+npm start
+Deploy to Vercel
+
+Connect GitHub repository to Vercel
+
+Deploy via Vercel dashboard or CLI
+
+🏗️ Development Context
+ScholarAI was developed during Status Code 2, an event organized by IIIT Kalyani, highlighting team collaboration and innovation in AI-driven education tools.
+
+🤝 Contributing
+Contributions are welcome. Fork the repository, open issues, or create pull requests to improve the project.
+
+📜 License
+This project was created for educational purposes as part of Status Code 2.
+[Insert License Here: e.g., MIT]
+
+🙌 Acknowledgements
+Special thanks to the IIIT Kalyani community and participants of Status Code 2 for guidance and support.
