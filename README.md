@@ -28,6 +28,20 @@ ScholarAI is an all-in-one platform for academic and career success, powered by 
 ## Mobile App
 We also built a mobile app with similar functionality, so users can choose between the web or app version depending on their usability and preference.
 
+<p align="center">
+  <img src="scholarAI App SS/notes.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI App SS/quiz.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI App SS/quiz2.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI App SS/quiz3.jpeg" width="15%">
+  &nbsp;
+  <img src="scholarAI App SS/quiz4.jpeg" width="15%">
+  &nbsp;
+ <img src="scholarAI App SS/resume.jpeg" width="15%">
+</p>
+
 **Tech Stack:**
 - Kotlin
 - Jetpack Compose
