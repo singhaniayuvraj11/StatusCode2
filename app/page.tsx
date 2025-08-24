@@ -100,7 +100,7 @@ export interface ResumeData {
   extracurriculars: Extracurricular[]
   customSections: CustomSection[]
   sectionOrder: string[]
-  // history: HistoryEntry[]
+  history: HistoryEntry[]
 }
 
 const initialData: ResumeData = {
@@ -121,7 +121,7 @@ const initialData: ResumeData = {
   extracurriculars: [],
   customSections: [],
   sectionOrder: ["education", "technicalSkills", "experience", "projects", "achievements", "extracurriculars"],
-  // history: [],
+  history: [],
 }
 
 const STORAGE_KEY = "halfbaked-resume-data" // Updated storage key to match new branding

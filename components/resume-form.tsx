@@ -57,7 +57,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
 
     setResumeData((prev) => ({
       ...prev,
-      history: [historyEntry, ...prev.history.slice(0, 49)], // Keep only last 50 entries
+      history: [historyEntry, ...(prev.history ? prev.history.slice(0, 49) : [])], // Safe fallback if history is missing
     }))
   }
 
@@ -462,7 +462,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       <ResumeStrengthBar resumeData={resumeData} onScrollToSection={scrollToSection} />
 
       {/* Personal Information */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["personal-info"] = el)} id="personal-info">
+      <section className="space-y-4" ref={el => { sectionRefs.current["personal-info"] = el }} id="personal-info">
         <h2 className="text-xl font-semibold text-foreground">Personal Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -533,7 +533,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Education */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["education"] = el)} id="education">
+      <section className="space-y-4" ref={el => { sectionRefs.current["education"] = el }} id="education">
         <h2 className="text-xl font-semibold text-foreground">Education</h2>
         {resumeData.education.map((edu) => (
           <div key={edu.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -620,7 +620,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Technical Skills */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["technical-skills"] = el)} id="technical-skills">
+      <section className="space-y-4" ref={el => { sectionRefs.current["technical-skills"] = el }} id="technical-skills">
         <h2 className="text-xl font-semibold text-foreground">Technical Skills</h2>
         {resumeData.technicalSkills.map((skill) => (
           <div key={skill.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -659,7 +659,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Projects */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["projects"] = el)} id="projects">
+      <section className="space-y-4" ref={el => { sectionRefs.current["projects"] = el }} id="projects">
         <h2 className="text-xl font-semibold text-foreground">Projects</h2>
         {resumeData.projects.map((project) => (
           <div key={project.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -720,7 +720,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Professional Experience */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["experience"] = el)} id="experience">
+      <section className="space-y-4" ref={el => { sectionRefs.current["experience"] = el }} id="experience">
         <h2 className="text-xl font-semibold text-foreground">Professional Experience</h2>
         {resumeData.experience.map((exp) => (
           <div key={exp.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -788,7 +788,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Achievements */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["achievements"] = el)} id="achievements">
+      <section className="space-y-4" ref={el => { sectionRefs.current["achievements"] = el }} id="achievements">
         <h2 className="text-xl font-semibold text-foreground">Achievements</h2>
         {resumeData.achievements.map((ach) => (
           <div key={ach.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -831,7 +831,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Extracurriculars */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["extracurriculars"] = el)} id="extracurriculars">
+      <section className="space-y-4" ref={el => { sectionRefs.current["extracurriculars"] = el }} id="extracurriculars">
         <h2 className="text-xl font-semibold text-foreground">Extracurriculars</h2>
         {resumeData.extracurriculars.map((extra) => (
           <div key={extra.id} className="border border-border p-4 rounded-md space-y-3 relative">
@@ -892,7 +892,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
       </section>
 
       {/* Custom Sections */}
-      <section className="space-y-4" ref={(el) => (sectionRefs.current["custom-sections"] = el)} id="custom-sections">
+      <section className="space-y-4" ref={el => { sectionRefs.current["custom-sections"] = el }} id="custom-sections">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-foreground">Custom Sections</h2>
           <Button variant="outline" onClick={addCustomSection} size="sm">
