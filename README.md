@@ -34,6 +34,11 @@
 
 The platform supports both **web** and **mobile** interfaces, ensuring accessibility and flexibility. Hosting is managed seamlessly on **Vercel**.  
 
+<p align="center">
+  <img src="ScholarAI SS/ss1.png" width="80%">
+  &nbsp;
+</p> 
+
 ---
 
 ## 🚀 Features  
@@ -41,35 +46,43 @@ The platform supports both **web** and **mobile** interfaces, ensuring accessibi
 ### 📝 Resume Builder  
 - AI chatbot assists in resume creation  
 - Real-time feedback and improvement suggestions  
-- AI-driven review (Note: single-template system, focused on content quality)  
+- AI-driven review (Note: single-template system, focused on content quality)
 
 <p align="center">
-  <img src="ScholarAI SS/ss1.png" width="15%">
+  <img src="ScholarAI SS/ss2.png" width="80%">
   &nbsp;
-  <img src="ScholarAI SS/ss2.png" width="15%">
-  &nbsp;
-  <img src="ScholarAI SS/ss3.png" width="15%">
-  &nbsp;
-  <img src="ScholarAI SS/ss4.png" width="15%">
-  &nbsp;
-  <img src="ScholarAI SS/ss5.png" width="15%">
-</p>  
+</p> 
 
 ### 📚 AI Note Generator  
 - Converts raw study material into concise, structured notes  
 - Highlights key points and organizes content intelligently  
 - Interactive Q&A for deeper understanding  
 
+<p align="center">
+  <img src="ScholarAI SS/ss3.png" width="80%">
+  &nbsp;
+</p> 
+
 ### 📄 Document Summarizer  
 - Extracts core information from long documents  
 - Provides concise bullet-point summaries  
 - Supports interactive queries on summarized content  
+
+<p align="center">
+  <img src="ScholarAI SS/ss4.png" width="80%">
+  &nbsp;
+</p> 
 
 ### 🎯 AI Quiz Creator  
 - Generates customized quizzes from text or PDF inputs  
 - Supports **MCQs** and **True/False** formats  
 - Adjustable difficulty levels  
 - Instant feedback on answers  
+
+<p align="center">
+  <img src="ScholarAI SS/ss5.png" width="80%">
+  &nbsp;
+</p> 
 
 ---
 
