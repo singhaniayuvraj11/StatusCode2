@@ -772,7 +772,9 @@ export function ResumePreview({ resumeData }: { resumeData: ResumeData }) {
           >
             {pageUnitIndexes.map((uIdx) => {
               const unit = units[uIdx]
-              return <div key={unit.key}>{unit.render()}</div>
+              return unit && typeof unit.render === "function" ? (
+                <div key={unit.key}>{unit.render()}</div>
+              ) : null
             })}
 
             {/* Page number footer */}

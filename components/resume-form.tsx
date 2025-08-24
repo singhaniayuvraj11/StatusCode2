@@ -144,6 +144,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       education: prev.education.filter((edu) => edu.id !== id),
     }))
   }
@@ -189,6 +190,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       technicalSkills: prev.technicalSkills.filter((skill) => skill.id !== id),
     }))
   }
@@ -234,6 +236,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       projects: prev.projects.filter((project) => project.id !== id),
     }))
   }
@@ -289,6 +292,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       experience: prev.experience.filter((exp) => exp.id !== id),
     }))
   }
@@ -334,6 +338,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       achievements: prev.achievements.filter((ach) => ach.id !== id),
     }))
   }
@@ -382,6 +387,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       extracurriculars: prev.extracurriculars.filter((extra) => extra.id !== id),
     }))
   }
@@ -432,6 +438,7 @@ export function ResumeForm({ resumeData, setResumeData }: ResumeFormProps) {
     )
     setResumeData((prev) => ({
       ...prev,
+      history: prev.history ? prev.history : [],
       customSections: prev.customSections.filter((section) => section.id !== sectionId),
       sectionOrder: prev.sectionOrder.filter((order) => order !== `custom-${sectionId}`),
     }))
