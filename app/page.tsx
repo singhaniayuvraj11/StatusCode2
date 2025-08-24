@@ -134,7 +134,6 @@ export default function ResumePage() {
   // PDF feature removed
   const [resumeData, setResumeData] = useState<ResumeData>(initialData)
   const [lastSaved, setLastSaved] = useState<Date | null>(null)
-  const [isAutoSaving, setIsAutoSaving] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   // Remove history UI and state
 
@@ -177,20 +176,7 @@ export default function ResumePage() {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setIsAutoSaving(true)
-      const dataToSave = {
-        ...resumeData,
-        lastSaved: Date.now(),
-      }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave))
-      setLastSaved(new Date())
-      setTimeout(() => setIsAutoSaving(false), 500)
-    }, AUTO_SAVE_DELAY)
-
-    return () => clearTimeout(timeoutId)
-  }, [resumeData])
+  // Auto-saving removed
 
   const handleDownloadHTMLDOCX = async () => {
     await generateHTMLToDOCX(resumeData)
@@ -240,12 +226,7 @@ export default function ResumePage() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
-              {isAutoSaving ? (
-                <>
-                  <Save className="w-4 h-4 animate-spin" />
-                  <span>Saving...</span>
-                </>
-              ) : lastSaved ? (
+              {lastSaved ? (
                 <>
                   <CheckCircle className="w-4 h-4 text-green-500" />
                   <span>Saved {lastSaved.toLocaleTimeString()}</span>
@@ -298,12 +279,7 @@ export default function ResumePage() {
 
       <div className="max-w-7xl mx-auto p-3 md:p-6">
         <div className="grid gap-4 md:gap-6 min-h-[calc(100vh-140px)] md:h-[calc(100vh-120px)] grid-cols-1 md:grid-cols-[1fr_2fr]">
-          {isAutoSaving && (
-            <div className="my-4 p-4 bg-yellow-100 border border-yellow-300 rounded text-yellow-900 text-xs overflow-auto">
-              <strong>Auto-saving data:</strong>
-              <pre className="whitespace-pre-wrap break-words mt-2">{JSON.stringify(resumeData, null, 2)}</pre>
-            </div>
-          )}
+          {/* Auto-saving UI removed */}
           <div className="bg-card rounded-xl shadow-lg border border-border overflow-hidden">
             <ResumeForm resumeData={resumeData} setResumeData={setResumeData} />
           </div>
